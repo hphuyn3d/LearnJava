@@ -10,21 +10,23 @@ public class Teachers {
     private int id;
     private String name;
     private int salary;
+    private int salaryEarned;
 
     /**
      * Creates a new Teacher object.
-     * @param id id for the teacher.
-     * @param name name of the teacher.
+     *
+     * @param id     id for the teacher.
+     * @param name   name of the teacher.
      * @param salary salary of the teacher.
      */
     public Teachers(int id, String name, int salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.salaryEarned = 0;
     }
 
     /**
-     *
      * @return the id of the teacher.
      */
     public int getId() {
@@ -32,7 +34,6 @@ public class Teachers {
     }
 
     /**
-     *
      * @return the name of the teacher.
      */
     public String getName() {
@@ -40,7 +41,6 @@ public class Teachers {
     }
 
     /**
-     *
      * @return the salary of the teacher.
      */
     public int getSalary() {
@@ -48,13 +48,29 @@ public class Teachers {
     }
 
     /**
-     * set the updated salary
-     * @param salary salary of teacher
+     * set the updated salary.
+     *
+     * @param salary salary of teacher.
      */
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
+    /**
+     * Adds to salaryEarned.
+     * Remmoves total money earned from school.
+     *
+     * @param salary salary added
+     */
+    public void receiveSalary(int salary) {
+        salaryEarned += salary;
+        School.updateTotalMoneySpent(salaryEarned);
+    }
+
+    @Override
+    public String toString() {
+        return "Name of the Teacher: " + name + " Total salary earned so far: $" + salaryEarned;
+    }
 }
 
 

@@ -12,8 +12,8 @@ public class School {
 
     private List<Teachers> teachers;
     private List<Student> students;
-    private int totalMoneyEarned;
-    private int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
 
 
     /**
@@ -72,7 +72,7 @@ public class School {
      * Adds the total money earned by the school.
      * @param moneyEarned money that is supposed to be added.
      */
-    public void upadteTotalMoneyEarned(int moneyEarned) {
+    public static void upadteTotalMoneyEarned(int moneyEarned) {
         totalMoneyEarned += moneyEarned;
     }
 
@@ -89,7 +89,7 @@ public class School {
      * School can only spend money on teachers (salary).
      * @param moneySpent the money spent
      */
-    public void updateTotalMoneySpent(int moneySpent) {
+    public static void updateTotalMoneySpent(int moneySpent) {
         totalMoneyEarned -= moneySpent;
     }
 }
